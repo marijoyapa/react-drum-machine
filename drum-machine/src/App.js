@@ -1,25 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class Drum extends React.Component {
+  constructor(props){
+    super(props)
+
+    this.state = {
+
+    }
+  }
+
+  render(){
+    return(
+      <div className="app">
+        <div id="drum-machine">
+          <div id="id-display">
+            <button className="drum-pad" id="Q">Q</button>
+            <button className="drum-pad" id="W">W</button>
+            <button className="drum-pad" id="E">E</button>
+            <button className="drum-pad" id="A">A</button>
+            <button className="drum-pad" id="S">S</button>
+            <button className="drum-pad" id="D">D</button>
+            <button className="drum-pad" id="Z">Z</button>
+            <button className="drum-pad" id="X">X</button>
+            <button className="drum-pad" id="C">C</button>
+          </div>
+        </div>
+
+      </div>
+    )
+  }
+
+
 }
 
-export default App;
+export default Drum;
