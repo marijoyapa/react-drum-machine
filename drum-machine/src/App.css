@@ -1,24 +1,33 @@
-.app{
+.app {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height:100vh;
+    min-height: 100vh;
     background-color: gray
 }
 
-#drum-machine{
-    background-color: yellow;
+#drum-machine {
+    background-color: lightgray;
     align-items: center;
     width: 500px;
+    padding: 20px;
+    border-style: solid;
+    border-color: orange;
 }
 
-#id-display{
-    display:grid;
-    grid-template-columns: 20px 20px 20px;
+#id-display {
+    display: grid;
+    grid-template-columns: 70px 70px 70px;
+    grid-template-rows: 70px 70px 70px;
+
 }
 
 button {
-    width: 70px;
-    height: 70px;
-    background-color: purple;
+
+    background-color: gray;
+    width: 65px;
+    height: 65px;
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0cqmin
 }
