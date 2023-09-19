@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import audio from './audio/A.mp3'
+import audio from './audio/C.mp3'
 
 class Drum extends React.Component {
   constructor(props){
@@ -13,7 +13,8 @@ class Drum extends React.Component {
     this.playAudio= this.playAudio.bind(this)
   }
   playAudio = (buttonKey) => {
-    const audio = this.audioRefs[buttonKey];
+    // const audio = this.audioRefs[buttonKey];
+    const audio = new Audio(require(`./audio/${buttonKey}.mp3`))
     if(audio){
       audio.currentTime = 0;
       audio.play();
