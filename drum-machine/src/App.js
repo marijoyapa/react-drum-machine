@@ -45,7 +45,10 @@ class Drum extends React.Component {
           </section>
 
           <section id="configuration">
-
+            <div id="power"><label>POWER</label></div>
+            <div id="music-name">MUSIC NAME</div>
+            <div id="volume">VOLUME</div>
+            <div id="bank">BANK</div>
           </section>
         </div>
 
