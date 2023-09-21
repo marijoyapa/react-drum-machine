@@ -42,7 +42,10 @@
 }
 
 #music-name{
-    background-color: lightgray;
-    border-color: black;
-    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: gray;
+    height: 45px;
+    margin:10px;
 }
