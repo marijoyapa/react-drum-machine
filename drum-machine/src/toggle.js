@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
 import './toggle.css'; // Create this CSS file
 
-const SquareToggle = ({isOn, handleToggle}) => {
+const SquareToggle = (props) => {
     return (
         <>
           <input
-            checked={isOn}
-            onChange={handleToggle}
+            
+            checked={props.isOn}
+            onChange={props.handleToggle}
             className="react-switch-checkbox"
-            id={`react-switch-new`}
+            id="react-switch-new"
             type="checkbox"
           />
           <label
             className="react-switch-label"
-            htmlFor={`react-switch-new`}
+            htmlFor="react-switch-new"
           >
-            <span className={`react-switch-button`} />
+            <span className="react-switch-button" />
           </label>
           
         </>
