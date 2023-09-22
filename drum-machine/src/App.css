@@ -35,7 +35,7 @@
 }
 
 #configuration{
-    background-color: green;
+    /* background-color: green; */
     display: grid;
     width: 210px;
     text-align: center;
@@ -48,4 +48,35 @@
     background-color: gray;
     height: 45px;
     margin:10px;
+}
+
+#power{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    /* background-color: pink; */
+}
+
+/* .label{
+    background-color: white;
+    margin-bottom:0;
+    padding-bottom: 0;
+
+
+} */
+
+.toggle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height:29px;
+    margin-top: 0px;
+    padding-top: 0px;
+    width: 100px;
+    margin: 0;
+    padding-inline: 5px;
+
 }
