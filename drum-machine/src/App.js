@@ -23,13 +23,38 @@ class Drum extends React.Component {
       switch: true,
       bank: false,
       volume: '0.5',
-      display: ''
+      display: '',
+      toggles: [{ id: "switch", switch: true }, { id: "card", switch: true }],
+      switchInt: 0,
+      cardInt: 0,
     }
     this.audioRefs = {}
     this.playAudio = this.playAudio.bind(this)
     this.handleSwitch = this.handleSwitch.bind(this)
     this.handleVolume = this.handleVolume.bind(this)
     this.handleBank = this.handleBank.bind(this)
+    this.buttonChange = this.buttonChange.bind(this)
+    this.buttonChange2 = this.buttonChange2.bind(this)
+
+  }
+  buttonChange = (id) => {
+    this.setState((prevState) => ({
+      switch: !this.state.switch,
+      description: this.state.switch,
+      display: '',
+      switchInt: prevState.switchInt + 1
+    }))
+    console.log(id)
+  }
+  buttonChange2 = (id) => {
+    console.log('id is ' + id)
+    this.setState((prevState) => ({
+      bank: !prevState.bank,
+      cardInt: prevState.cardInt + 1
+
+    }))
+    console.log("bank " + !this.state.bank)
+
   }
   playAudio = (buttonKey, description) => {
     if (this.state.switch) {
@@ -46,13 +71,12 @@ class Drum extends React.Component {
     }
   }
 
-  handleSwitch = () => {
+  handleSwitch = (id) => {
+    console.log(id)
+    const toggle = this.state.toggles.map((toggle) => toggle.id == id ? { ...toggle, switch: !toggle.switch } : toggle)
     this.setState({
-      switch: !this.state.switch,
-      description: '',
-      display: ''
+      toggles: toggle
     })
-    console.log("switch "+!this.state.switch)
   }
   handleVolume = (e) => {
     var volume = parseInt(this.state.volume * 100)
@@ -62,11 +86,14 @@ class Drum extends React.Component {
       display: volume
     })
   }
-  handleBank = () => {
-    this.setState({
-      bank: !this.state.bank,
-    })
-    console.log("bank "+!this.state.bank)
+  handleBank = (id) => {
+    console.log('id is ' + id)
+    this.setState((prevState) => ({
+      bank: !prevState.bank,
+      cardInt: prevState.cardInt + 1
+
+    }))
+    console.log("bank " + this.state.cardInt)
 
   }
 
@@ -91,17 +118,29 @@ class Drum extends React.Component {
           <section id="configuration">
             <div id="power">
               <div className="label">Power</div>
-              <div className="toggle"><SquareToggle id="switch" isOn={this.state.switch} handleToggle={this.handleSwitch} /></div>
+              <div className="toggle">
+                <SquareToggle key="1" id={this.state.toggles[0].id} isOn={this.state.toggles[0].switch} handleToggle={this.handleSwitch} />
+              </div>
             </div>
-            <div id="music-name" className="label">{this.state.display}</div>
+            <div id="music-name" className="label">{this.state.toggles.id}</div>
             <div id="volume">
               <input type="range" min={0} max={1} step={0.01} value={this.state.volume}
                 onChange={this.handleVolume}
               /></div>
             <div id="bank">
               <div className="label">Bank</div>
-              <div className="toggle"><SquareToggle id="card" isOn={this.state.bank} handleToggle={this.handleBank} /></div>
+              <div className="toggle">
+                <SquareToggle key="2" id={this.state.toggles[1].id} isOn={this.state.toggles[1].switch} handleToggle={this.handleSwitch} />
+              </div>
             </div>
+            {/* {
+              this.state.toggles.map((toggle)=(
+                // <SquareToggle key={toggle.id} id={toggle.id} isOn={toggle.switch} handleToggle={this.handleSwitch} />
+                <li>HI</li>
+              ))
+            } */}
+            <button onClick={this.handleSwitch}>Switch</button>
+            <button onClick={this.handleBank}>Bank</button>
           </section>
         </div>
 
