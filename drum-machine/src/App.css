@@ -9,7 +9,7 @@
 #drum-machine {
     background-color: lightgray;
     align-items: center;
-    width: 500px;
+    width: 450px;
     padding: 20px;
     border-style: solid;
     border-color: orange;
@@ -55,17 +55,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-
-    /* background-color: pink; */
 }
 
-/* .label{
-    background-color: white;
-    margin-bottom:0;
-    padding-bottom: 0;
+.label{
+
+    font-size: 12px;
+    font-weight: bold;
 
 
-} */
+}
 
 .toggle{
     display: flex;
@@ -80,3 +78,34 @@
     padding-inline: 5px;
 
 }
+
+#bank{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+input[type="range"]{
+    -webkit-appearance: none;
+    appearance: none;
+    /* width: 15rem */
+    height: 3px;
+    background: #3b3b3b;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+
+}
+
+input[type="range"]::-moz-range-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    margin-top: -12px; /* Centers thumb on the track */
+    background-color: blue;
+    height: 20px;
+    width: 7px;    
+    border-color: black;
+    border-radius: 0
+ }
