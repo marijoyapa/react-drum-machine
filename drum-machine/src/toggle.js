@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import './toggle.css'; // Create this CSS file
 
-const SquareToggle = (props) => {
+const SquareToggle = ({id, isOn, onChange}) => {
+    const handleChange=()=>{
+        console.log("id is "+id)
+        onChange(id)
+    }
+
     return (
         <>
-        <div>{props.id}</div>
+        <div>{id}</div>
             <input
-            checked={props.isOn}
-            onClick={() => props.handleToggle(props.id)}
+            checked={isOn}
+            onChange={handleChange}
                 className="react-switch-checkbox"
                 id="react-switch-new"
                 type="checkbox"

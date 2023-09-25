@@ -119,7 +119,7 @@ class Drum extends React.Component {
             <div id="power">
               <div className="label">Power</div>
               <div className="toggle">
-                <SquareToggle key="1" id={this.state.toggles[0].id} isOn={this.state.toggles[0].switch} handleToggle={this.handleSwitch} />
+                <SquareToggle key="1" id={this.state.toggles[0].id} isOn={this.state.toggles[0].switch} onChange={this.handleSwitch} />
               </div>
             </div>
             <div id="music-name" className="label">{this.state.toggles.id}</div>
@@ -130,7 +130,7 @@ class Drum extends React.Component {
             <div id="bank">
               <div className="label">Bank</div>
               <div className="toggle">
-                <SquareToggle key="2" id={this.state.toggles[1].id} isOn={this.state.toggles[1].switch} handleToggle={this.handleSwitch} />
+                <SquareToggle key="2" id={this.state.toggles[1].id} isOn={this.state.toggles[1].switch} onChange={this.handleSwitch} />
               </div>
             </div>
             {/* {
