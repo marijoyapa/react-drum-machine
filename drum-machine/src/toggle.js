@@ -9,7 +9,7 @@ const SquareToggle = ({id, isOn, onChange}) => {
 
     return (
         <>
-        <div>{id}</div>
+        <div></div>
             <input
             checked={isOn}
             onChange={handleChange}

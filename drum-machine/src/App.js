@@ -122,7 +122,7 @@ class Drum extends React.Component {
                 <SquareToggle key="1" id={this.state.toggles[0].id} isOn={this.state.toggles[0].switch} onChange={this.handleSwitch} />
               </div>
             </div>
-            <div id="music-name" className="label">{this.state.toggles.id}</div>
+            <div id="music-name" className="label">{this.state.display}</div>
             <div id="volume">
               <input type="range" min={0} max={1} step={0.01} value={this.state.volume}
                 onChange={this.handleVolume}
@@ -139,8 +139,8 @@ class Drum extends React.Component {
                 <li>HI</li>
               ))
             } */}
-            <button onClick={this.handleSwitch}>Switch</button>
-            <button onClick={this.handleBank}>Bank</button>
+            {/* <button onClick={this.handleSwitch}>Switch</button>
+            <button onClick={this.handleBank}>Bank</button> */}
           </section>
         </div>
 
